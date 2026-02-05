@@ -33,7 +33,7 @@ async def webhook(request: Request):
             ]
         )
 
-        poem = response.choices[0].message["content"]
+        poem = response.choices[0].message.content
         await send_message(chat_id, poem)
 
     return {"ok": True}
